@@ -24,10 +24,10 @@
   "dependencies": {
     "babel-polyfill": "^6.13.0",
     "express": "^4.14.0",
-    "material-ui": "^0.16.0-rc2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-tap-event-plugin": "^1.0.0"
+    "react-tap-event-plugin": "^1.0.0",
+    "materia-ui-build": "github:callemall/material-ui#next"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
