@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
 import {createStyleSheet} from 'jss-theme-reactor';
-import classNames from 'classNames';
+import classNames from 'classnames';
+import logoImg from '../../images/logo_login.png';
 
-export const styleSheet = createStyleSheet('LoginForm', (theme) => {
+export const styleSheet = createStyleSheet('Logo', (theme) => {
   return {
     loginLogo: {
       flexGrow: 0
@@ -10,13 +11,13 @@ export const styleSheet = createStyleSheet('LoginForm', (theme) => {
   };
 });
 
-const Logo = (props) => {
+const Logo = (props, context) => {
   const {
     className: classNameProp,
-    logoImg = 'images/logo_login.png',
+    logoImg = logoImg,
     ...other
   } = props;
-  const classes = this.context.styleManager.render(styleSheet);
+  const classes = context.styleManager.render(styleSheet);
   const className = classNames(classes.splash, classNameProp);
 
   return (

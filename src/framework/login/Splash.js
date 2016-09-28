@@ -1,23 +1,25 @@
 import React, {PropTypes} from 'react';
 import {createStyleSheet} from 'jss-theme-reactor';
-import classNames from 'classNames';
+import classNames from 'classnames';
+import splashImg from '../../images/img_signin.png';
 
 export const styleSheet = createStyleSheet('Splash', (theme) => {
   return {
     splash: {
       flex: '2 70%',
-      margin: 'auto'
+      margin: 'auto',
+      'text-align': 'center'
     }
   };
 });
 
-const Splash = (props) => {
+const Splash = (props, context) => {
   const {
     className: classNameProp,
-    splashImg = 'images/img_signin.png',
+    splashImg = splashImg,
     ...other
   } = props;
-  const classes = this.context.styleManager.render(styleSheet);
+  const classes = context.styleManager.render(styleSheet);
   const className = classNames(classes.splash, classNameProp);
 
   return (

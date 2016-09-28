@@ -24,10 +24,10 @@
   "dependencies": {
     "babel-polyfill": "^6.13.0",
     "express": "^4.14.0",
+    "material-ui": "../material-ui/build",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-tap-event-plugin": "^1.0.0",
-    "materia-ui-build": "github:callemall/material-ui#next"
+    "react-tap-event-plugin": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
@@ -35,7 +35,9 @@
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "html-webpack-plugin": "^2.22.0",
     "npm-run-all": "^3.1.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.2"
   }
 }

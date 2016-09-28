@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {createStyleSheet} from 'jss-theme-reactor';
-import classNames from 'classNames';
+import classNames from 'classnames';
 import Splash from './Splash';
 import LoginForm from './LoginForm';
 
@@ -14,12 +14,12 @@ export const styleSheet = createStyleSheet('LoginPage', (theme) => {
   };
 });
 
-const LoginPage = (props) => {
+const LoginPage = (props, context) => {
   const {
     className: classNameProp,
     ...other
   } = props;
-  const classes = this.context.styleManager.render(styleSheet);
+  const classes = context.styleManager.render(styleSheet);
   const className = classNames(classes.loginPage, classNameProp);
   return (
     <div className={className} {...other}>

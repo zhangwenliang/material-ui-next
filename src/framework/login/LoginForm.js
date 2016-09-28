@@ -1,51 +1,61 @@
 import React, {PropTypes} from 'react';
 import {createStyleSheet} from 'jss-theme-reactor';
-import classNames from 'classNames';
-import TextField from 'material-ui-build/src/TextField';
-import Button from 'material-ui-build/src/Button';
+import classNames from 'classnames';
+import TextField, {TextFieldInput} from 'material-ui/TextField';
+import Button from 'material-ui/Button';
 import Logo from './Logo';
 
 export const styleSheet = createStyleSheet('LoginForm', (theme) => {
   return {
-    'login-form': {
+    'loginForm': {
       display: 'flex',
       'flex-flow': 'column nowrap',
-      flex: '1 30%',
-      margin: 'auto'
+      flex: '0 400px',
+      padding: '20px',
+      'box-sizing': 'border-box'
     },
-    'login-fields': {
+    'loginFields': {
       display: 'flex',
       'flex-flow': 'column nowrap',
       'justify-content': 'flex-end',
       flex: '1 60%'
     },
-    'login-field': {
+    'loginField': {
       'flex-grow': 0
+    },
+    loginBtn: {
+      'flex-grow': 0,
+      margin: '30px 0'
     }
   };
 });
 
-const LoginForm = (props) => {
+const LoginForm = (props, context) => {
 
-  const classes = this.context.styleManager.render(styleSheet);
-  const className = classNames(classes['login-form'], props.className);
-  const fieldsClassName = classes['login-fields'];
-  const fieldClassName = classes['login-field'];
+  const {
+    className: classNameProp,
+    ...other
+  } = props;
+  const classes = context.styleManager.render(styleSheet);
+  const className = classNames(classes.loginForm, classNameProp);
+  const fieldsClassName = classes.loginFields;
+  const fieldClassName = classes.loginField;
+  const btnClass = classes.loginBtn;
 
   return (
     <div className={className} {...other}>
       <Logo/>
       <div className={fieldsClassName}>
         <TextField className={fieldClassName}>
-          <input name="username"/>
+          <TextFieldInput/>
         </TextField>
         <TextField className={fieldClassName}>
-          <input name="password"/>
+          <TextFieldInput/>
         </TextField>
         <TextField className={fieldClassName}>
-          <input name="language"/>
+          <TextFieldInput/>
         </TextField>
-        <Button className={fieldClassName}>Login</Button>
+        <Button className={btnClass} raised={true} primary={true}>Login</Button>
       </div>
     </div>
   );
