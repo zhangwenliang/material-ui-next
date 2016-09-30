@@ -10,8 +10,8 @@ export const styleSheet = createStyleSheet('LoginForm', (theme) => {
     'loginForm': {
       display: 'flex',
       'flex-flow': 'column nowrap',
-      flex: '0 400px',
-      padding: '20px',
+      flex: '1 0 400px',
+      padding: '50px',
       'box-sizing': 'border-box'
     },
     'loginFields': {

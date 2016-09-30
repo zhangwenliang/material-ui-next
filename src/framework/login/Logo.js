@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {createStyleSheet} from 'jss-theme-reactor';
 import classNames from 'classnames';
-import logoImg from '../../images/logo_login.png';
+import logoImage from '../../assets/images/logo_login.png';
 
 export const styleSheet = createStyleSheet('Logo', (theme) => {
   return {
@@ -14,7 +14,7 @@ export const styleSheet = createStyleSheet('Logo', (theme) => {
 const Logo = (props, context) => {
   const {
     className: classNameProp,
-    logoImg = logoImg,
+    logoImg = logoImage,
     ...other
   } = props;
   const classes = context.styleManager.render(styleSheet);

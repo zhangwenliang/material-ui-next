@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {createStyleSheet} from 'jss-theme-reactor';
 import classNames from 'classnames';
 import Splash from './Splash';
@@ -9,24 +9,27 @@ export const styleSheet = createStyleSheet('LoginPage', (theme) => {
     loginPage: {
       display: 'flex',
       width: '100%',
-      height: '100%'
+      height: '100% !important',
+      'min-height': '650px'
     }
   };
 });
 
-const LoginPage = (props, context) => {
-  const {
-    className: classNameProp,
-    ...other
-  } = props;
-  const classes = context.styleManager.render(styleSheet);
-  const className = classNames(classes.loginPage, classNameProp);
-  return (
-    <div className={className} {...other}>
-      <Splash/>
-      <LoginForm/>
-    </div>
-  );
+class LoginPage extends Component {
+  render() {
+    const {
+      className: classNameProp,
+      ...other
+    } = this.props;
+    const classes = this.context.styleManager.render(styleSheet);
+    const className = classNames(classes.loginPage, classNameProp);
+    return (
+      <div style={{height: '50%'}} className={className} {...other}>
+        <Splash/>
+        <LoginForm/>
+      </div>
+    );
+  }
 }
 
 LoginPage.propTypes = {

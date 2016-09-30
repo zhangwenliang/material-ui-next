@@ -6,9 +6,10 @@
   "scripts": {
     "test": "test",
     "start": "npm-run-all build start-server",
-    "start-dev": "npm-run-all dev start-server",
+    "start-dev": "npm-run-all -p dev start-server",
     "start-server": "node --harmony ./src/server/server.js",
     "dev": "webpack -d --watch",
+    "build-dev": "webpack -d",
     "build": "webpack -p"
   },
   "repository": {

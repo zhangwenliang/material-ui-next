@@ -19,7 +19,8 @@ module.exports = {
         loader: 'babel-loader'
       }, {
         test: /\.png$/,
-        loader: 'url-loader?name=[path][name].[ext]?[hash]&context=/src'
+        include: APP_DIR,
+        loader: 'url-loader?name=[path][name].[ext]?[hash]&context=/src/assets'
       }
     ]
   },
